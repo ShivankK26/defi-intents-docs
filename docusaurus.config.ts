@@ -82,14 +82,14 @@ const config: Config = {
       },
       items: [
         {to: '/docs/why-de-fi-intents', label: 'Why DeFi Intents', position: 'left'},
-        {to: '/docs/how-it-works', label: 'How it works', position: 'left'},
-        {to: '/docs/capabilities', label: 'Capabilities', position: 'left'},
-        {to: '/docs/intro', label: 'Docs', position: 'right'},
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
-        },
+        // {to: '/docs/how-it-works', label: 'How it works', position: 'left'},
+        // {to: '/docs/capabilities', label: 'Capabilities', position: 'left'},
+        // {to: '/docs/intro', label: 'Docs', position: 'right'},
+        // {
+        //   href: 'https://github.com/facebook/docusaurus',
+        //   label: 'GitHub',
+        //   position: 'right',
+        // },
       ],
     },
     // footer: {

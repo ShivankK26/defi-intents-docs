@@ -1,11 +1,62 @@
 .features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+  /* Keep equal spacing above/below the cards for a balanced hero section */
+  padding: 2.75rem 0;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-radius-rounded);
+  padding: 1.35rem 1.25rem;
+  min-height: 170px;
+}
+
+.iconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--ifm-radius-rounded);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 59, 48, 0.12);
+  color: var(--ifm-color-primary);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.cardTitle {
+  margin-top: 0.85rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.cardDescription {
+  margin: 0;
+  color: var(--ifm-color-content-secondary);
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+.cardLink {
+  margin-top: 1rem;
+}
+
+[data-theme='dark'] .card {
+  background: rgba(26, 26, 26, 0.45);
+}
+
+@media screen and (max-width: 996px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
 }
