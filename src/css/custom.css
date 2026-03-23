@@ -1,30 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
+ *
+ * This file overrides Infima/Docusaurus variables so the docs site
+ * matches the DeFi Intents landing-page branding.
  */
 
-/* You can override the default Infima variables here. */
+/* Light mode */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-font-family-base: 'Space Grotesk', ui-sans-serif, system-ui,
+    -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji',
+    'Segoe UI Emoji';
+
+  /* Brand colors (must match) */
+  --ifm-color-primary: #ff3b30;
+  --ifm-color-primary-dark: #e6352d;
+  --ifm-color-primary-darker: #cc2e26;
+  --ifm-color-primary-darkest: #b7261e;
+  --ifm-color-primary-light: #ff5c52;
+  --ifm-color-primary-lighter: #ff736a;
+  --ifm-color-primary-lightest: #ff8c83;
+
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(255, 59, 48, 0.2);
+
+  /* Light neutrals (from landing palette) */
+  --ifm-background-color: hsl(0 0% 100%);
+  --ifm-color-content: hsl(0 0% 10%);
+  --ifm-color-content-secondary: hsl(0 0% 45%);
+  --ifm-color-emphasis-200: hsl(0 0% 90%);
+
+  /* Border radius (~8px) */
+  --ifm-radius-base: 0.5rem;
+  --ifm-radius-rounded: 0.5rem;
+
+  /* Ensure Infima uses our palette for links/buttons */
+  --ifm-link-color: var(--ifm-color-primary);
+  --ifm-toc-border-color: var(--ifm-color-emphasis-200);
+  --ifm-table-border-color: var(--ifm-color-emphasis-200);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Dark mode */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  /* Keep primary brand red consistent across modes */
+  --ifm-color-primary: #ff3b30;
+  --ifm-color-primary-dark: #e6352d;
+  --ifm-color-primary-darker: #cc2e26;
+  --ifm-color-primary-darkest: #b7261e;
+  --ifm-color-primary-light: #ff5c52;
+  --ifm-color-primary-lighter: #ff736a;
+  --ifm-color-primary-lightest: #ff8c83;
+
+  --ifm-background-color: hsl(0 0% 10%);
+  --ifm-color-content: hsl(0 0% 95%);
+  --ifm-color-content-secondary: hsl(0 0% 70%);
+  --ifm-color-emphasis-200: hsl(0 0% 20%);
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 59, 48, 0.28);
+}
+
+/* Apply font globally (Infima usually sets this, but be explicit) */
+body {
+  font-family: var(--ifm-font-family-base);
+}
+
+/* Keep links/buttons on-brand */
+a,
+a:visited {
+  color: var(--ifm-link-color);
+}
+
+/* Docs homepage hero should use cream, not primary red, for a closer match */
+.hero--primary {
+  background: #fff6e0;
+  color: hsl(0 0% 10%);
+}
+
+[data-theme='dark'] .hero--primary {
+  background: rgba(255, 59, 48, 0.08);
+  color: hsl(0 0% 95%);
+}
+
+/* Brand CTAs and secondary buttons */
+.button--secondary {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.button--primary {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: #fff6e0;
+}
+
+.codeBlockContainer,
+.codeBlockContainer pre {
+  border-radius: var(--ifm-radius-base);
 }
